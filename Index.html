@@ -8,182 +8,202 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #5cc7a3, #64b3f4);
-    color: #333;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* ✅ Sidebar */
-  .sidebar {
-    width: 80px;
-    background: rgba(255,255,255,0.9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-  .sidebar a {
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-    text-align: center;
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s;
-  }
-  .sidebar a.active, .sidebar a:hover {
-    color: #1abc9c;
-  }
-  .sidebar a i {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  /* ✅ Main Content */
-  .main {
-    flex: 1;
-    overflow-y: auto;
-    padding: 40px;
-    background: rgba(255,255,255,0.95);
-    transition: 0.4s;
-  }
-
-  .section {
-    display: none;
-    animation: fadeIn 0.5s ease;
-  }
-  .section.active {
-    display: block;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ✅ Profile */
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  .profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    object-fit: cover;
-  }
-
-  .info-box {
-    display: grid;
-    grid-template-columns: 100px auto;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .tag {
-    background: #1abc9c;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    display: inline-block;
-  }
-
-  /* ✅ Education & Work Container */
-  .edu-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .edu-left img {
-    width: 120px;
-    height: auto;
-    border-radius: 10px;
-  }
-  .edu-right {
-    flex: 1;
-  }
-
-  ul.skills {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 10px;
-  }
-  ul.skills li {
-    margin-bottom: 6px;
-  }
-
-  /* ✅ Responsive */
-  @media(max-width: 1024px) {
-    .main {
-      padding: 20px;
-    }
-  }
-
-  @media(max-width: 768px) {
     body {
-      flex-direction: column;
-      height: auto;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #5cc7a3, #64b3f4);
+      color: #333;
+      display: flex;
+      height: 100vh;         /* Desktop ใช้เต็มจอ */
+      overflow: hidden;      /* Desktop scroll แค่ใน .main */
     }
 
+    /* Sidebar */
     .sidebar {
-      flex-direction: row;
-      width: 100%;
-      height: 60px;
-      justify-content: space-around;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      width: 80px;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
     }
-
     .sidebar a {
-      font-size: 12px;
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+      text-align: center;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s;
+    }
+    .sidebar a.active, .sidebar a:hover {
+      color: #1abc9c;
     }
     .sidebar a i {
-      font-size: 18px;
+      font-size: 20px;
+      margin-bottom: 5px;
     }
 
+    /* Main Content */
     .main {
-      height: auto;
+      flex: 1;
+      overflow-y: auto;
+      padding: 40px;
+      background: rgba(255,255,255,0.95);
+      transition: 0.4s;
     }
 
-    /* ✅ Education & Work ให้ซ้อนกัน */
-    .edu-container {
-      flex-direction: column;
-      text-align: center;
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease;
     }
-    .edu-left img {
-      width: 80%;
-      max-width: 200px;
-      margin: 0 auto;
+    .section.active {
+      display: block;
     }
-  }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  @media(max-width: 480px) {
     .profile {
-      flex-direction: column;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
     }
     .profile img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    .profile h1 {
+      margin: 0;
+    }
+    .info-box {
+      display: grid;
+      grid-template-columns: 100px auto;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .tag {
+      background: #1abc9c;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: inline-block;
+    }
+    ul.skills {
+      list-style-type: disc; /* จุด bullet */
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    ul.skills li {
+      margin-bottom: 6px;
     }
 
-    .info-box {
-      grid-template-columns: 1fr;
+    /* Education & Work Container */
+    .edu-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 20px;
     }
-  }
-</style>
+    .edu-left img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .edu-right {
+      flex: 1;
+    }
+
+    /* ✅ Responsive */
+    @media(max-width: 1024px){
+      .main {
+        padding: 20px;
+      }
+    }
+
+    @media(max-width: 768px){
+      /* ✅ ปล่อยให้เลื่อนลงได้ */
+      body {
+        flex-direction: column;
+        height: auto;         /* ✅ ให้สูงตามเนื้อหา */
+        overflow: visible;    /* ✅ เปิด scroll */
+      }
+      .sidebar {
+        flex-direction: row;
+        width: 100%;
+        height: 60px;
+        justify-content: space-around;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .sidebar a {
+        font-size: 12px;
+      }
+      .sidebar a i {
+        font-size: 18px;
+      }
+      .main {
+        min-height: 100vh;    /* ✅ ให้เนื้อหาอย่างน้อยสูงเท่าหน้าจอ */
+        overflow-y: visible;  /* ✅ ไม่บังคับ scroll ภายใน */
+      }
+
+      /* ✅ Education & Work ให้ซ้อนกัน */
+      .edu-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .edu-left img {
+        width: 80%;
+        max-width: 200px;
+        margin: 0 auto;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .info-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ✅ ซูม 1.75 เฉพาะ Desktop */
+    @media (min-width: 1025px) {
+      body {
+        transform: scale(1.6);
+        transform-origin: top left;
+        width: calc(100% / 1.6); /* ปรับให้ไม่ล้น */
+        height: calc(100% / 1.6);
+        overflow: hidden; /* Desktop scroll แค่ใน .main */
+      }
+    }
+
+    /* ✅ บนมือถือ/Tablet ไม่ซูม */
+    @media (max-width: 1024px) {
+      body {
+        transform: none;
+        width: 100%;
+        height: auto;
+        overflow: visible; /* เปิด scroll */
+      }
+    }
+
+  </style>
 </head>
 <body>
   <!-- Sidebar -->
@@ -215,7 +235,7 @@
         <div>
           <h1>Phakorn Charuraksa</h1>
           <h3>Programmer</h3>
-          <p>Graduated with a degree in Computer Engineering Therefore has knowledge in programming. data management Want to apply for a job in order to bring your knowledge, skills, and experience to work for company.</p>
+          <p>Graduated with a degree in Computer Engineering Therefore has knowledge in programming, data management. I want to apply for a job in order to bring your knowledge, skills, and experience to work for company.</p>
         </div>
       </div>
 
