@@ -1,0 +1,43 @@
+.edu-container {
+  display: grid;
+  grid-template-columns: 130px 1fr; /* ✅ ซ้าย 130px, ขวาเต็ม */
+  gap: 20px;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ✅ ขนาดรูปพอดีคอลัมน์ */
+.edu-left img {
+  width: 120px;         /* ความกว้างคงที่ */
+  height: 90px;         /* ความสูงเหมาะสม */
+  border-radius: 10px;
+  object-fit: cover;    /* ครอบให้พอดีไม่เพี้ยน */
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.edu-right h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+.edu-right p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* ✅ มือถือให้เรียงบน-ล่าง */
+@media(max-width: 768px) {
+  .edu-container {
+    grid-template-columns: 1fr; /* ✅ มือถือคอลัมน์เดียว */
+    text-align: center;
+  }
+  .edu-left img {
+    width: 150px;  /* มือถือให้ใหญ่ขึ้นหน่อย */
+    height: 100px;
+  }
+}
